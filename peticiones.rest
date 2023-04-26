@@ -1,0 +1,252 @@
+
+@host = http://localhost:3000
+
+@urlUsers = /api/users
+@urlClients = /api/clients
+@urlReparations = /api/reparations
+@urlCars = /api/cars
+@urlMechanics = /api/mechanics
+
+### API DE USUARIOS (ADMIN)
+
+
+# ### GET BY ID
+# GET {{host}}{{urlUsers}}/11
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNjg4NDYxNDg0LCJpYXQiOjE2ODE1NDk0ODR9.ifmy-xfFTuogqkEl4zbXhSuKsYfDQBnv0k98vwKgkM8
+
+# ### GET BY DNI
+# GET {{host}}{{urlUsers}}/dni/TEST556
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxOSwiZXhwIjoxNjg4NjI0Mjc0LCJpYXQiOjE2ODE3MTIyNzR9.RYSAHldxuHLFYLukClwzGrCOjKzletdMtCE5KzeaeOo
+
+
+# ### GET BY EMAIL
+# GET {{host}}{{urlUsers}}/email/sara@
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNjg4NDYxNDg0LCJpYXQiOjE2ODE1NDk0ODR9.ifmy-xfFTuogqkEl4zbXhSuKsYfDQBnv0k98vwKgkM8
+
+
+### NEW USER
+POST {{host}}{{urlUsers}}/register
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxOTcwNjYsImlhdCI6MTY4MjI4NTA2Nn0.aKiaFymrlxfhyG7bwtApogHe7_EhfSdo07iOte67ujY
+
+{
+    "name": "Prueba",
+    "surname": "Martin",
+    "birthdate": "1966-10-21",
+    "dni": "21345230",
+    "phone": "643214530",
+    "email": "prueba@",
+    "username": "lula3",
+    "password": "12345",
+    "role": "admin"
+}
+
+
+### LOGIN USER
+POST {{host}}{{urlUsers}}/login
+Content-Type: application/json
+
+{
+    "email": "sar@",
+    "dni" : "0897430984",
+    "password": "12345"
+}
+
+
+### GET ADMIN EMPLOYERS
+GET {{host}}{{urlUsers}}/admins
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNiwidXNlcl9yb2xlIjoibWVjaGFuaWMiLCJleHAiOjE2ODkxNzUyNDgsImlhdCI6MTY4MjI2MzI0OH0.XGZhouwLcZYK8aEP1IdPhmWRp_AxKYIteCVXorGgEPg
+
+
+### GET ADMIN EMPLOYERS BY ID
+GET {{host}}{{urlUsers}}/admins/26
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNiwidXNlcl9yb2xlIjoibWVjaGFuaWMiLCJleHAiOjE2ODkxNzUyNDgsImlhdCI6MTY4MjI2MzI0OH0.XGZhouwLcZYK8aEP1IdPhmWRp_AxKYIteCVXorGgEPg
+
+### EDIT USER
+PUT {{host}}{{urlUsers}}/edit/40
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxOTcwNjYsImlhdCI6MTY4MjI4NTA2Nn0.aKiaFymrlxfhyG7bwtApogHe7_EhfSdo07iOte67ujY
+
+{
+    "name": "HOLA",
+    "surname": "Romero4",
+    "birthdate": "1967-10-13",
+    "dni": "7125483t",
+    "phone": "6615425557",
+    "email": "hola@bast",
+    "username": "Lula5",
+    "password": "12345"
+}
+
+
+### DELETE ADMIN EMPLOYER
+DELETE {{host}}{{urlUsers}}/admin/46
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxOTcwNjYsImlhdCI6MTY4MjI4NTA2Nn0.aKiaFymrlxfhyG7bwtApogHe7_EhfSdo07iOte67ujY
+
+
+###################################################
+
+
+### API DE CLIENTES
+
+
+### NEW CLIENT
+POST {{host}}{{urlClients}}
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+{
+    "name": "MARTA",
+    "surname": "Contreras",
+    "email":"marta@",
+    "phone": "7654423867",
+    "dni": "9876451099",
+    "address": "Plaza Mayor, 23",
+    "card_number": "45345453948"
+}
+
+### GET ALL
+GET {{host}}{{urlClients}}
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+### GET BY ID
+GET {{host}}{{urlClients}}/3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNiwidXNlcl9yb2xlIjoibWVjaGFuaWMiLCJleHAiOjE2ODkxNzUyNDgsImlhdCI6MTY4MjI2MzI0OH0.XGZhouwLcZYK8aEP1IdPhmWRp_AxKYIteCVXorGgEPg
+
+### GET CAR OF CLIENT
+GET {{host}}{{urlClients}}/car/20
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNiwidXNlcl9yb2xlIjoibWVjaGFuaWMiLCJleHAiOjE2ODkxNzUyNDgsImlhdCI6MTY4MjI2MzI0OH0.XGZhouwLcZYK8aEP1IdPhmWRp_AxKYIteCVXorGgEPg
+
+### DELETE CLIENT BY ID
+DELETE {{host}}{{urlClients}}/3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+
+
+###################################################
+
+
+### API DE REPARACIONES
+
+### POST REPARATION
+POST {{host}}{{urlReparations}}
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+{
+    "type_rep": "mechanic",
+    "reparation":"revision",
+    "price": "200",
+    "users_id": 40,
+    "cars_id": 9
+}
+
+
+
+### GET ALL REPARATIONS
+GET {{host}}{{urlReparations}}
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+### GET BY ID
+GET {{host}}{{urlReparations}}/16
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+### GET MECHANIC OF THIS REPARATION
+GET {{host}}{{urlReparations}}/mechanic/16
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+### EDIT REPARATION
+PUT {{host}}{{urlReparations}}/edit/22
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+ {
+    "status": "repaired",
+    "type_rep": "mechanic",
+    "reparation":"need revision",
+    "price": "200",
+    "users_id": 40
+}
+
+
+### DELETE REPARATION
+
+DELETE {{host}}{{urlReparations}}/18
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+##################################################
+
+### API DE COCHES
+
+### POST CAR
+POST {{host}}{{urlCars}}
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+{  
+    "chasis": "4773546",
+    "registration": "774536357",
+    "brand":"MERCEDES",
+    "model": "S 500",
+    "color": "gray",
+    "km": 78975,
+    "year": 2020,
+    "doors": 5,
+    "type": "automatic",
+    "fuel": "gasoil",
+    "damages": "Change neumatics",
+    "clients_id": 24
+}
+
+
+### GET ALL CARS
+GET {{host}}{{urlCars}}
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+###GET CAR BY ID
+GET {{host}}{{urlCars}}/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+### GET CAR BY CLIENT
+GET {{host}}{{urlCars}}/client/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+### EDIT CAR BY ID
+PUT {{host}}{{urlCars}}/1
+Content-Type: application/json
+
+{  
+    "chasis": "432546",
+    "registration": "453635",
+    "brand":"MERCEDES",
+    "model": "S 500",
+    "color": "black",
+    "km": 78975,
+    "year": 2020,
+    "doors": 5,
+    "type": "automatic",
+    "fuel": "gasoil",
+    "damages": "Change neumatics",
+}
+
+### DELETE CAR BY ID
+DELETE {{host}}{{urlCars}}/6
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+##############################################
+
+### GET ALL MECHANICS
+
+### GET ALL
+GET {{host}}{{urlMechanics}}
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+
+### GET BY ID
+GET {{host}}{{urlMechanics}}/40
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+
+
+### DELETE MECHANIC BY ID
+DELETE {{host}}{{urlMechanics}}/20
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
