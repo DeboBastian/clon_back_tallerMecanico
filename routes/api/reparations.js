@@ -96,6 +96,7 @@ router.delete('/:reparationId', checkAdmin, async (req, res) => {
     const { reparationId } = req.params
 
     try {
+
         const [reparation] = await getById(reparationId)
         const [result] = await deleteById(reparationId)
         if (reparation.length === 0) {

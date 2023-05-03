@@ -91,7 +91,19 @@ router.get('/admins/:id', checkToken, async (req, res) => {
     }
 });
 
+router.get('/admin', checkToken, async (req, res) => {
 
+    try {
+
+        res.json(req.user.role)
+
+    } catch (error) {
+        res.json({ fatal: error.message })
+    }
+
+
+
+})
 
 // router.get('/:userId', async (req, res) => {
 //     const { userId } = req.params;

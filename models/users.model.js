@@ -56,5 +56,8 @@ const deleteEmployerById = (id) => {
     return db.query('delete from users where role = "admin" and id = ?', [id])
 }
 
+
+
+
 module.exports = { create, getAll, getByDni, getById, getByEmail, deleteById, updateAdminById, getAdminEmployers, getEmployerById, deleteEmployerById }
 
