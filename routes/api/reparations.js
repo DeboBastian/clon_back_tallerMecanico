@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { create, getById, getAll, deleteById, mechanicForReparation, updateById, filterByUser } = require('../../models/reparations.model')
+const { create, getById, getAll, deleteById, mechanicForReparation, updateById, filterByUser, mechanicTable } = require('../../models/reparations.model')
 const { checkAdmin } = require('../../helpers/middlewares');
 
 
@@ -25,6 +25,16 @@ router.get('/', async (req, res) => {
     }
 });
 
+
+router.get('/mechTable', async (req, res) => {
+
+    try {
+        const [reparations] = await mechanicTable();
+        res.json(reparations)
+    } catch (error) {
+        res.json({ fatal: error.message })
+    }
+})
 
 
 router.get('/:reparationId', async (req, res) => {
@@ -63,6 +73,8 @@ router.get('/mechanic/:userid', async (req, res) => {
         res.json({ fatal: error.message })
     }
 });
+
+
 
 
 

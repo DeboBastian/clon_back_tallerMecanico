@@ -46,5 +46,9 @@ const updateById = (reparationId, { status, type_rep, reparation, price, users_i
     )
 }
 
+const mechanicTable = () => {
+    return db.query(`select reparations.*, cars.chasis, cars.brand, cars.model from reparations, cars where reparations.cars_id = cars.id;`)
+}
 
-module.exports = { create, getById, getAll, mechanicForReparation, deleteById, updateById, filterByUser }
+
+module.exports = { create, getById, getAll, mechanicForReparation, deleteById, updateById, filterByUser, mechanicTable }
