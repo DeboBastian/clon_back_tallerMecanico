@@ -25,7 +25,7 @@ const checkToken = async (req, res, next) => {
 
 const checkAdmin = (req, res, next) => {
     if (req.user.role !== 'admin') {
-        return res.json({ fatal: 'DEBES SER ADMIN' })
+        return res.json('DEBES SER ADMIN')
     }
     next();
 }

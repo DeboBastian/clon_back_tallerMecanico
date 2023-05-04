@@ -30,14 +30,14 @@ Content-Type: application/json
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxOTcwNjYsImlhdCI6MTY4MjI4NTA2Nn0.aKiaFymrlxfhyG7bwtApogHe7_EhfSdo07iOte67ujY
 
 {
-    "name": "Roberto",
-    "surname": "Martin",
+    "name": "admin",
+    "surname": "admin",
     "birthdate": "1966-10-21",
-    "dni": "4361298431",
-    "phone": "34124134",
-    "email": "roberto@gmail.com",
-    "username": "robert",
-    "password": "12345",
+    "dni": "21345211",
+    "phone": "643214511",
+    "email": "admin@",
+    "username": "admin",
+    "password": "admin",
     "role": "admin"
 }
 
@@ -47,8 +47,8 @@ POST {{host}}{{urlUsers}}/login
 Content-Type: application/json
 
 {
-    "email": "sar@",
-    "dni" : "0897430984",
+    "email": "sara@gmail.com",
+    "dni" : "123743432 - B",
     "password": "12345"
 }
 
@@ -83,6 +83,12 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb
 DELETE {{host}}{{urlUsers}}/admin/46
 Content-Type: application/json
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxOTcwNjYsImlhdCI6MTY4MjI4NTA2Nn0.aKiaFymrlxfhyG7bwtApogHe7_EhfSdo07iOte67ujY
+
+### GET ONE ADMIN
+GET {{host}}{{urlUsers}}/admin
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2OTAwMjU3NDMsImlhdCI6MTY4MzExMzc0M30.hCbTi_0yI5OchA8vod0_9wJGEdvnEaqgWj66DOZoW0o
+
 
 
 ###################################################
@@ -172,8 +178,8 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb
 
 ### DELETE REPARATION
 
-DELETE {{host}}{{urlReparations}}/18
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxNzU2MjEsImlhdCI6MTY4MjI2MzYyMX0.G9_Tgj7B4PT2jvzkV0zUfnk0MjQVUIlr3650zZ6yFqo
+DELETE {{host}}{{urlReparations}}/24
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozOSwidXNlcl9yb2xlIjoibWVjaGFuaWMiLCJleHAiOjE2OTAwMTgwMDUsImlhdCI6MTY4MzEwNjAwNX0.f-5nKibwEbuF697PD3MhhvhWGhyqhvsPOYRgiY2Jnkk
 
 ##################################################
 
