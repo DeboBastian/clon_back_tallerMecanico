@@ -30,13 +30,13 @@ Content-Type: application/json
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2ODkxOTcwNjYsImlhdCI6MTY4MjI4NTA2Nn0.aKiaFymrlxfhyG7bwtApogHe7_EhfSdo07iOte67ujY
 
 {
-    "name": "Prueba",
+    "name": "Roberto",
     "surname": "Martin",
     "birthdate": "1966-10-21",
-    "dni": "21345230",
-    "phone": "643214530",
-    "email": "prueba@",
-    "username": "lula3",
+    "dni": "4361298431",
+    "phone": "34124134",
+    "email": "roberto@gmail.com",
+    "username": "robert",
     "password": "12345",
     "role": "admin"
 }
